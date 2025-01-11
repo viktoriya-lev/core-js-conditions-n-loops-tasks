@@ -38,12 +38,14 @@ function isPositive(number) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(...args) {
-  let maxNum = args[0];
+function getMaxNumber(a, b, c) {
+  const numArr = [a, b, c];
 
-  for (let i = 0; i < args.length; i += 1) {
-    if (args[i] > maxNum) {
-      maxNum = args[i];
+  let maxNum = numArr[0];
+
+  for (let i = 0; i < numArr.length; i += 1) {
+    if (numArr[i] > maxNum) {
+      maxNum = numArr[i];
     }
   }
 
@@ -173,7 +175,7 @@ function convertNumberToString(numberStr) {
         word = 'point';
         break;
       default:
-        console.log(`No such char: ${char}`);
+        word = '';
     }
 
     if (result) result += ' ';
